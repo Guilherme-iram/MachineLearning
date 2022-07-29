@@ -5,7 +5,7 @@ from numpy import random
 
 def random_forest_classifica(X, y):
     
-    SEED = 1234
+    SEED = 123143
     random.seed(SEED)
     
     treino_x, teste_x, treino_y, teste_y = train_test_split(X, 
@@ -14,11 +14,11 @@ def random_forest_classifica(X, y):
     classificador = RandomForestClassifier(n_estimators = 100)
     classificador.fit(treino_x, treino_y)
 
-    return f"Resultado da classificação RAND FOREST: {classificador.score(teste_x,teste_y)*100:.4f}"
+    return f"Resultado da classificação RAND FOREST: {classificador.score(teste_x,teste_y)*100:.6f}"
 
 def dummy_classifica(X, y):
     
-    SEED = 1234
+    SEED = 123143
     random.seed(SEED)
     
     treino_x, teste_x, treino_y, teste_y = train_test_split(X, 
@@ -28,4 +28,4 @@ def dummy_classifica(X, y):
     classificador = DummyClassifier(strategy="most_frequent")
     classificador.fit(treino_x, treino_y)
     
-    return f"Resultado da classificação DUMMY: {classificador.score(teste_x,teste_y)*100:.4f}"
+    return f"Resultado da classificação DUMMY: {classificador.score(teste_x,teste_y)*100:.6f}"
